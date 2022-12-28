@@ -1,4 +1,4 @@
-// non preemptive Shortest job First Scheduling
+// preemptive Shortest job First Scheduling
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -101,8 +101,7 @@ int main()
         total_time = findmax(total_time , ps[i].ct);
     }
     
-
-    total_time = ps[n - 1].ct;
+   
     utilisation = (total_time - total_idle_time) / total_time;
 
     for (int i = 0; i < n; i++)

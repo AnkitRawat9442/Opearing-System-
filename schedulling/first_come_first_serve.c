@@ -1,5 +1,5 @@
-// First Comes First Serve 
-// Non Preemptive 
+// First Comes First Serve
+// Non Preemptive
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -63,7 +63,12 @@ int main()
 
     total_time = ps[n - 1].ct;
     utilisation = (total_time - total_idle_time) / total_time;
-
+    for (int i = 0; i < n; i++)
+    {
+        printf("P%d\t%d\t%d\t%d\t%d\t%d\n", ps[i].pid, ps[i].at, ps[i].bt, ps[i].ct, ps[i].tat, ps[i].wt);
+    }
+    printf("____________________");
+    
     qsort((void *)ps, n, sizeof(struct process), comparatorPID);
     printf("After Sort  \n");
     for (int i = 0; i < n; i++)
@@ -75,3 +80,6 @@ int main()
     printf("CPU Utilisation : %.2f %%\n ", utilisation * 100);
     return 0;
 }
+
+
+// 5 4 3 4 4 2 3 5 3 7 4 1

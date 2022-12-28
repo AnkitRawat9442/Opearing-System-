@@ -71,7 +71,6 @@ void solution(int no_process, int no_res)
     int index = -1, i;
     while (completed != no_process)
     {
-
         i = is_first_process == true ? 0 : (index + 1) % no_process;
 
         for (i; i < no_process; i++)
